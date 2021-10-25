@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@functions/*": ["src/functions/*"],
+      "@users/*": ["src/contexts/users/*"],
       "@libs/*": ["src/libs/*"]
     }
   }

@@ -15,9 +15,9 @@ provider:
 
 functions:
   hello:
-    handler: src/functions/hello.handle
+    handler: src/contexts/users/infra/handlers/testeHandlers.handle
     events:
       - http:
-          path: /hello
+          path: /teste
           method: GET
           cors: true
