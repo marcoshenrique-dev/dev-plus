@@ -11,14 +11,26 @@ datasource db {
 }
 
 model User {
-  id        String     @id    @default(uuid())
+  id String @id @default(uuid())
 
-  name      String     
+  name String
 
-  username  String     @unique
+  username String @unique
 
-  email     String     @unique
+  email String @unique
+
+  Profile Profile[]
 
   @@map("users")
 
+}
+
+model Profile {
+  id        String    @id @default(uuid())
+  name      String
+  iconUrl   String
+  userId    String?
+  user      User?     @relation(fields: [userId], references: [id])
+
+  @@map("profiles")
 }
