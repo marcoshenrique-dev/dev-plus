@@ -21,3 +21,10 @@ functions:
           path: /users
           method: POST
           cors: true
+  listUser:
+    handler: src/contexts/users/infra/handlers/listUserHandle.handle
+    events:
+      - http:
+          path: /users
+          method: GET
+          cors: true

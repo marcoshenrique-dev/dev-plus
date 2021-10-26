@@ -5,7 +5,8 @@
       "@users/*": ["src/contexts/users/*"],
       "@libs/*": ["src/libs/*"],
       "@utils/*": ["src/contexts/shared/core/utils/*"],
-      "@database/*": ["src/contexts/shared/database/*"]
+      "@database/*": ["src/contexts/shared/database/*"],
+      "@middlewares/*": ["src/contexts/shared/middlewares/*"]
     }
   }
 }

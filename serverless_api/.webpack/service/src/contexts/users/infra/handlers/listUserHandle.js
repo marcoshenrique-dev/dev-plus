@@ -120,13 +120,13 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
-/***/ "./src/contexts/users/infra/handlers/createUserHandle.ts":
-/*!***************************************************************!*\
-  !*** ./src/contexts/users/infra/handlers/createUserHandle.ts ***!
-  \***************************************************************/
+/***/ "./src/contexts/users/infra/handlers/listUserHandle.ts":
+/*!*************************************************************!*\
+  !*** ./src/contexts/users/infra/handlers/listUserHandle.ts ***!
+  \*************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"handle\": () => (/* binding */ handle)\n/* harmony export */ });\n/* harmony import */ var _controllers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../controllers */ \"./src/contexts/users/infra/controllers/index.ts\");\n\nconst createUserController = new _controllers__WEBPACK_IMPORTED_MODULE_0__.CreateUserController();\nconst handle = async (event) => {\n    const result = await createUserController.handle(event);\n    return result;\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvY29udGV4dHMvdXNlcnMvaW5mcmEvaGFuZGxlcnMvY3JlYXRlVXNlckhhbmRsZS50cy5qcyIsIm1hcHBpbmdzIjoiOzs7OztBQUNBO0FBRUE7QUFFQTtBQUNBO0FBRUE7QUFDQSIsInNvdXJjZXMiOlsid2VicGFjazovL3NlcnZlcmxlc3MtYXBpLy4vc3JjL2NvbnRleHRzL3VzZXJzL2luZnJhL2hhbmRsZXJzL2NyZWF0ZVVzZXJIYW5kbGUudHM/NzQxMyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBIYW5kbGVyIH0gZnJvbSBcImF3cy1sYW1iZGFcIjtcbmltcG9ydCB7IENyZWF0ZVVzZXJDb250cm9sbGVyIH0gZnJvbSBcIi4uL2NvbnRyb2xsZXJzXCI7XG5cbmNvbnN0IGNyZWF0ZVVzZXJDb250cm9sbGVyID0gbmV3IENyZWF0ZVVzZXJDb250cm9sbGVyKCk7XG5cbmV4cG9ydCBjb25zdCBoYW5kbGU6IEhhbmRsZXIgPSBhc3luYyAoZXZlbnQpID0+IHtcbiAgY29uc3QgcmVzdWx0ID0gYXdhaXQgY3JlYXRlVXNlckNvbnRyb2xsZXIuaGFuZGxlKGV2ZW50KTtcblxuICByZXR1cm4gcmVzdWx0O1xufTsiXSwibmFtZXMiOltdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./src/contexts/users/infra/handlers/createUserHandle.ts\n");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"handle\": () => (/* binding */ handle)\n/* harmony export */ });\n/* harmony import */ var _controllers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../controllers */ \"./src/contexts/users/infra/controllers/index.ts\");\n\nconst listUserController = new _controllers__WEBPACK_IMPORTED_MODULE_0__.ListUserController();\nconst handle = async (event) => {\n    const result = await listUserController.handle(event);\n    return result;\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvY29udGV4dHMvdXNlcnMvaW5mcmEvaGFuZGxlcnMvbGlzdFVzZXJIYW5kbGUudHMuanMiLCJtYXBwaW5ncyI6Ijs7Ozs7QUFDQTtBQUVBO0FBRUE7QUFDQTtBQUVBO0FBQ0EiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9zZXJ2ZXJsZXNzLWFwaS8uL3NyYy9jb250ZXh0cy91c2Vycy9pbmZyYS9oYW5kbGVycy9saXN0VXNlckhhbmRsZS50cz84OWM0Il0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IEhhbmRsZXIgfSBmcm9tIFwiYXdzLWxhbWJkYVwiO1xuaW1wb3J0IHsgTGlzdFVzZXJDb250cm9sbGVyIH0gZnJvbSBcIi4uL2NvbnRyb2xsZXJzXCI7XG5cbmNvbnN0IGxpc3RVc2VyQ29udHJvbGxlciA9IG5ldyBMaXN0VXNlckNvbnRyb2xsZXIoKTtcblxuZXhwb3J0IGNvbnN0IGhhbmRsZTogSGFuZGxlciA9IGFzeW5jIChldmVudCkgPT4ge1xuICBjb25zdCByZXN1bHQgPSBhd2FpdCBsaXN0VXNlckNvbnRyb2xsZXIuaGFuZGxlKGV2ZW50KTtcblxuICByZXR1cm4gcmVzdWx0O1xufTsiXSwibmFtZXMiOltdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./src/contexts/users/infra/handlers/listUserHandle.ts\n");
 
 /***/ }),
 
@@ -262,7 +262,7 @@ module.exports = require("axios");
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval-source-map devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/contexts/users/infra/handlers/createUserHandle.ts");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/contexts/users/infra/handlers/listUserHandle.ts");
 /******/ 	var __webpack_export_target__ = exports;
 /******/ 	for(var i in __webpack_exports__) __webpack_export_target__[i] = __webpack_exports__[i];
 /******/ 	if(__webpack_exports__.__esModule) Object.defineProperty(__webpack_export_target__, "__esModule", { value: true });
