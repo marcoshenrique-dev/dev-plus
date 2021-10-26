@@ -1,0 +1,2 @@
+CREATE DATABASE devplus; 
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
