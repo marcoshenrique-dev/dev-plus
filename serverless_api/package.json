@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "@middy/core": "^1.5.2",
-    "@middy/http-json-body-parser": "^1.5.2"
+    "@middy/http-json-body-parser": "^1.5.2",
+    "tsconfig-paths-webpack-plugin": "^3.5.1"
   },
   "devDependencies": {
     "@serverless/typescript": "^2.23.0",

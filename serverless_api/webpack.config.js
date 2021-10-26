@@ -1,6 +1,7 @@
 const path = require('path');
 const slsw = require('serverless-webpack');
 const nodeExternals = require('webpack-node-externals');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 module.exports = {
   context: __dirname,
@@ -8,6 +9,7 @@ module.exports = {
   entry: slsw.lib.entries,
   devtool: slsw.lib.webpack.isLocal ? 'eval-cheap-module-source-map' : 'source-map',
   resolve: {
+    plugins: [new TsconfigPathsPlugin({ configFile: "./tsconfig.json" })],
     extensions: ['.mjs', '.json', '.ts', '.html', '.png'],
     symlinks: false,
     cacheWithContext: false,
