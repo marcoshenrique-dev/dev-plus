@@ -14,10 +14,10 @@ provider:
   name: aws
 
 functions:
-  hello:
-    handler: src/contexts/users/infra/handlers/testeHandlers.handle
+  createUser:
+    handler: src/contexts/users/infra/handlers/createUserHandle.handle
     events:
       - http:
-          path: /teste
-          method: GET
+          path: /users
+          method: POST
           cors: true
