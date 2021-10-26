@@ -1,4 +1,6 @@
-export function Success({statusCode = 200, body = ""}) {
+import IParams from "@utils/types/params";
+
+export function Success({statusCode = 200, body = ""} : IParams) {
   return {
     statusCode: statusCode,
     body: JSON.stringify(body),

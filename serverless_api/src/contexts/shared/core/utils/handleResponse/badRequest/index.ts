@@ -1,6 +1,6 @@
 import IParams from "@utils/types/params";
 
-export function NotFound({statusCode = 404, body = ""}: IParams) {
+export function badRequest({statusCode = 400, body = ""}: IParams) {
   return {
     statusCode: statusCode,
     body: JSON.stringify(body),

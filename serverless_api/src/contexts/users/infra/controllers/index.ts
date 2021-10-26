@@ -1,1 +1,1 @@
-export * from './Teste/testeController';
+export * from './CreateUser/createUserController';
