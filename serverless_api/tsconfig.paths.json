@@ -4,7 +4,8 @@
     "paths": {
       "@users/*": ["src/contexts/users/*"],
       "@libs/*": ["src/libs/*"],
-      "@utils/*": ["src/contexts/shared/core/utils/*"]
+      "@utils/*": ["src/contexts/shared/core/utils/*"],
+      "@database/*": ["src/contexts/shared/database/*"]
     }
   }
 }
