@@ -49,3 +49,10 @@ functions:
           path: /profiles
           method: GET
           cors: true
+  deleteProfile:
+    handler: src/contexts/profiles/infra/handlers/deleteProfileHandler.handle
+    events:
+      - http:
+          path: /profiles
+          method: DELETE
+          cors: true
