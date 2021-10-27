@@ -21,8 +21,8 @@ functions:
           path: /users
           method: POST
           cors: true
-  listUser:
-    handler: src/contexts/users/infra/handlers/listUserHandler.handle
+  findUser:
+    handler: src/contexts/users/infra/handlers/findUserHandler.handle
     events:
       - http:
           path: /users
@@ -34,4 +34,11 @@ functions:
       - http:
           path: /profiles
           method: POST
+          cors: true
+  listProfiles:
+    handler: src/contexts/profiles/infra/handlers/listProfilesHandler.handle
+    events:
+      - http:
+          path: /profiles/all
+          method: GET
           cors: true
