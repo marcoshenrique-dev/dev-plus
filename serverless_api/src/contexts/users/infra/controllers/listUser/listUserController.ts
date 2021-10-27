@@ -1,25 +1,19 @@
-import { Success, badRequest } from "@utils/handleResponse";
+import { ListUserService } from "@users/infra/services";
+import { Success } from "@utils/handleResponse";
 import IParams from "@utils/types/params";
 
-import ensureAuthenticated from "@middlewares/ensureAuthenticated";
 
+const listUserService = new ListUserService();
 class ListUserController {
 
   async handle(event): Promise<IParams> {
 
+  const {username} = event.headers;
 
-    console.log(event);
-
-   const validate = await ensureAuthenticated({headers: event.headers});
-
-   if(!validate.isAuthenticated){
-    return badRequest({body: validate.message});
-   }
+  const result = await listUserService.execute(username);
   
    return Success({
-     body: {
-       'message': 'tudo ok'
-     }
+     body: result
    });
 }
 }
