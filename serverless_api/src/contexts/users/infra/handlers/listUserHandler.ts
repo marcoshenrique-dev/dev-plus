@@ -1,10 +1,10 @@
 import { Handler } from "aws-lambda";
 
-import { ListUserController } from "../controllers";
+import { FindUserController } from "../controllers";
 import ensureAuthenticated from "@middlewares/ensureAuthenticated";
 import { badRequest } from "@utils/handleResponse";
 
-const listUserController = new ListUserController();
+const findUserController = new FindUserController();
 
 export const handle: Handler = async (event) => {
 
@@ -14,7 +14,7 @@ export const handle: Handler = async (event) => {
    return badRequest({body: validate.message});
   }
 
-  const result = await listUserController.handle(event);
+  const result = await findUserController.handle(event);
 
   return result;
 };

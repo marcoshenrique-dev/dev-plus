@@ -1,16 +1,16 @@
-import { ListUserService } from "@users/infra/services";
+import { FindUserService } from "@users/infra/services";
 import { Success } from "@utils/handleResponse";
 import IParams from "@utils/types/params";
 
 
-const listUserService = new ListUserService();
-class ListUserController {
+const findUserService = new FindUserService();
+class FindUserController {
 
   async handle(event): Promise<IParams> {
 
   const {username} = event.headers;
 
-  const result = await listUserService.execute(username);
+  const result = await findUserService.execute(username);
   
    return Success({
      body: result
@@ -18,4 +18,4 @@ class ListUserController {
 }
 }
 
-export {ListUserController};
+export {FindUserController};

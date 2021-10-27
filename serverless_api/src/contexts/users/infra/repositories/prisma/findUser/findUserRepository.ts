@@ -2,7 +2,7 @@
 import {client} from '@database/client';
 import IUser from '@users/core/entities/user';
 
-class ListUserRepository {
+class FindUserRepository {
 
   async find(username: string): Promise<IUser> {
 
@@ -18,4 +18,4 @@ class ListUserRepository {
   }
 }
 
-export {ListUserRepository};
+export {FindUserRepository};

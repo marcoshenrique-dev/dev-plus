@@ -1,2 +1,2 @@
 export * from './createUser/createUserController';
-export * from './listUser/listUserController';
+export * from './findUser/findUserController';
