@@ -3,6 +3,8 @@
     "baseUrl": ".",
     "paths": {
       "@users/*": ["src/contexts/users/*"],
+      "@profiles/*": ["src/contexts/profiles/*"],
+
       "@libs/*": ["src/libs/*"],
       "@utils/*": ["src/contexts/shared/core/utils/*"],
       "@database/*": ["src/contexts/shared/database/*"],

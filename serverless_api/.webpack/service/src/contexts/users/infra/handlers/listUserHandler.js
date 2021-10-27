@@ -70,6 +70,26 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/contexts/shared/middlewares/ensureAuthenticated.ts":
+/*!****************************************************************!*\
+  !*** ./src/contexts/shared/middlewares/ensureAuthenticated.ts ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _services_github_api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../services/github_api */ \"./src/contexts/shared/services/github_api.ts\");\n\nasync function ensureAuthenticated(data) {\n    console.log(data.headers);\n    const { username, Authorization } = data.headers;\n    if (!Authorization) {\n        return {\n            isAuthenticated: false,\n            message: 'token de autenticação é necessário'\n        };\n    }\n    try {\n        const result = await _services_github_api__WEBPACK_IMPORTED_MODULE_0__[\"default\"].get(`/${username}`, {\n            headers: {\n                \"Authorization\": `token ${Authorization}`\n            }\n        });\n        if (result.status === 200) {\n            return {\n                isAuthenticated: true,\n                message: 'usuário autenticado'\n            };\n        }\n        else {\n            return {\n                isAuthenticated: false,\n                message: 'token é inválido'\n            };\n        }\n    }\n    catch {\n        return {\n            isAuthenticated: false,\n            message: 'algo deu errado ao fazer login'\n        };\n    }\n}\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ensureAuthenticated);\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvY29udGV4dHMvc2hhcmVkL21pZGRsZXdhcmVzL2Vuc3VyZUF1dGhlbnRpY2F0ZWQudHMuanMiLCJtYXBwaW5ncyI6Ijs7Ozs7QUFHQTtBQWdCQTtBQUVBO0FBRUE7QUFFQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFFQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFFQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFBQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUVBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBRUEiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9zZXJ2ZXJsZXNzLWFwaS8uL3NyYy9jb250ZXh0cy9zaGFyZWQvbWlkZGxld2FyZXMvZW5zdXJlQXV0aGVudGljYXRlZC50cz9lZGQyIl0sInNvdXJjZXNDb250ZW50IjpbIlxuLy8gcmVjZWJlIG8gdG9rZW4gcG9yIGhlYWRlciAtPiB2YWxpZGEgbmEgYXBpIGRvIGdpdGh1YiAtPiBwZXJtaXRlIGNvbnRpbnVhciBvdSBiYXJyYSBhIHJlcXVlc3RcblxuaW1wb3J0IGFwaSBmcm9tIFwiLi4vc2VydmljZXMvZ2l0aHViX2FwaVwiO1xuXG4vLyB1cmwgOiBjdXJsIC1IIFwiQXV0aG9yaXphdGlvbjogdG9rZW4gT0FVVEgtVE9LRU5cIiBodHRwczovL2FwaS5naXRodWIuY29tL3VzZXJzL3VzdWFyaW8tbm8tZ2l0aHViIC1JXG5cbmludGVyZmFjZSBJUmVzcG9uc2Uge1xuICBtZXNzYWdlPzogc3RyaW5nO1xuICBpc0F1dGhlbnRpY2F0ZWQ6IGJvb2xlYW47XG59XG5cbmludGVyZmFjZSBJUmVxdWVzdCB7XG4gIGhlYWRlcnM6IHtcbiAgICBBdXRob3JpemF0aW9uOiBzdHJpbmc7XG4gICAgdXNlcm5hbWU6IHN0cmluZztcbiAgfVxufVxuXG5hc3luYyBmdW5jdGlvbiBlbnN1cmVBdXRoZW50aWNhdGVkKGRhdGEgOiBJUmVxdWVzdCk6IFByb21pc2U8SVJlc3BvbnNlPiB7XG5cbiAgY29uc29sZS5sb2coZGF0YS5oZWFkZXJzKTtcblxuICBjb25zdCB7dXNlcm5hbWUsIEF1dGhvcml6YXRpb259ID0gZGF0YS5oZWFkZXJzO1xuXG4gIGlmKCFBdXRob3JpemF0aW9uKSB7XG4gICAgcmV0dXJuIHtcbiAgICAgIGlzQXV0aGVudGljYXRlZDogZmFsc2UsXG4gICAgICBtZXNzYWdlOiAndG9rZW4gZGUgYXV0ZW50aWNhw6fDo28gw6kgbmVjZXNzw6FyaW8nXG4gICAgfTtcbiAgfVxuXG4gIHRyeSB7XG4gICAgY29uc3QgcmVzdWx0ID0gYXdhaXQgYXBpLmdldChgLyR7dXNlcm5hbWV9YCwge1xuICAgICAgaGVhZGVyczoge1xuICAgICAgICBcIkF1dGhvcml6YXRpb25cIjogYHRva2VuICR7QXV0aG9yaXphdGlvbn1gXG4gICAgICB9XG4gICAgfSk7XG5cbiAgICBpZihyZXN1bHQuc3RhdHVzID09PSAyMDAgKXtcbiAgICAgIHJldHVybiB7XG4gICAgICAgIGlzQXV0aGVudGljYXRlZDogdHJ1ZSxcbiAgICAgICAgbWVzc2FnZTogJ3VzdcOhcmlvIGF1dGVudGljYWRvJ1xuICAgICAgfVxuICAgIH0gZWxzZSB7XG4gICAgICByZXR1cm4ge1xuICAgICAgICBpc0F1dGhlbnRpY2F0ZWQ6IGZhbHNlLFxuICAgICAgICBtZXNzYWdlOiAndG9rZW4gw6kgaW52w6FsaWRvJ1xuICAgICAgfVxuICAgIH1cbiAgfVxuXG4gIGNhdGNoIHtcbiAgICByZXR1cm4ge1xuICAgICAgaXNBdXRoZW50aWNhdGVkOiBmYWxzZSxcbiAgICAgIG1lc3NhZ2U6ICdhbGdvIGRldSBlcnJhZG8gYW8gZmF6ZXIgbG9naW4nXG4gICAgfVxuICB9XG59XG5cbmV4cG9ydCBkZWZhdWx0IGVuc3VyZUF1dGhlbnRpY2F0ZWQ7Il0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./src/contexts/shared/middlewares/ensureAuthenticated.ts\n");
+
+/***/ }),
+
+/***/ "./src/contexts/shared/services/github_api.ts":
+/*!****************************************************!*\
+  !*** ./src/contexts/shared/services/github_api.ts ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ \"axios\");\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);\n\nconst api = axios__WEBPACK_IMPORTED_MODULE_0___default().create({\n    baseURL: 'https://api.github.com/users'\n});\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (api);\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvY29udGV4dHMvc2hhcmVkL3NlcnZpY2VzL2dpdGh1Yl9hcGkudHMuanMiLCJtYXBwaW5ncyI6Ijs7Ozs7O0FBQUE7QUFFQTtBQUNBO0FBQ0E7QUFFQSIsInNvdXJjZXMiOlsid2VicGFjazovL3NlcnZlcmxlc3MtYXBpLy4vc3JjL2NvbnRleHRzL3NoYXJlZC9zZXJ2aWNlcy9naXRodWJfYXBpLnRzP2JkYzQiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IGF4aW9zIGZyb20gJ2F4aW9zJztcblxuY29uc3QgYXBpID0gYXhpb3MuY3JlYXRlKHtcbiAgYmFzZVVSTDogJ2h0dHBzOi8vYXBpLmdpdGh1Yi5jb20vdXNlcnMnXG59KTtcblxuZXhwb3J0IGRlZmF1bHQgYXBpO1xuIl0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./src/contexts/shared/services/github_api.ts\n");
+
+/***/ }),
+
 /***/ "./src/contexts/users/infra/controllers/createUser/createUserController.ts":
 /*!*********************************************************************************!*\
   !*** ./src/contexts/users/infra/controllers/createUser/createUserController.ts ***!
@@ -100,13 +120,13 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
-/***/ "./src/contexts/users/infra/handlers/createUserHandle.ts":
-/*!***************************************************************!*\
-  !*** ./src/contexts/users/infra/handlers/createUserHandle.ts ***!
-  \***************************************************************/
+/***/ "./src/contexts/users/infra/handlers/listUserHandler.ts":
+/*!**************************************************************!*\
+  !*** ./src/contexts/users/infra/handlers/listUserHandler.ts ***!
+  \**************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"handle\": () => (/* binding */ handle)\n/* harmony export */ });\n/* harmony import */ var _controllers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../controllers */ \"./src/contexts/users/infra/controllers/index.ts\");\n\nconst createUserController = new _controllers__WEBPACK_IMPORTED_MODULE_0__.CreateUserController();\nconst handle = async (event) => {\n    const result = await createUserController.handle(event);\n    return result;\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvY29udGV4dHMvdXNlcnMvaW5mcmEvaGFuZGxlcnMvY3JlYXRlVXNlckhhbmRsZS50cy5qcyIsIm1hcHBpbmdzIjoiOzs7OztBQUNBO0FBRUE7QUFFQTtBQUNBO0FBRUE7QUFDQSIsInNvdXJjZXMiOlsid2VicGFjazovL3NlcnZlcmxlc3MtYXBpLy4vc3JjL2NvbnRleHRzL3VzZXJzL2luZnJhL2hhbmRsZXJzL2NyZWF0ZVVzZXJIYW5kbGUudHM/NzQxMyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBIYW5kbGVyIH0gZnJvbSBcImF3cy1sYW1iZGFcIjtcbmltcG9ydCB7IENyZWF0ZVVzZXJDb250cm9sbGVyIH0gZnJvbSBcIi4uL2NvbnRyb2xsZXJzXCI7XG5cbmNvbnN0IGNyZWF0ZVVzZXJDb250cm9sbGVyID0gbmV3IENyZWF0ZVVzZXJDb250cm9sbGVyKCk7XG5cbmV4cG9ydCBjb25zdCBoYW5kbGU6IEhhbmRsZXIgPSBhc3luYyAoZXZlbnQpID0+IHtcbiAgY29uc3QgcmVzdWx0ID0gYXdhaXQgY3JlYXRlVXNlckNvbnRyb2xsZXIuaGFuZGxlKGV2ZW50KTtcblxuICByZXR1cm4gcmVzdWx0O1xufTsiXSwibmFtZXMiOltdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./src/contexts/users/infra/handlers/createUserHandle.ts\n");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"handle\": () => (/* binding */ handle)\n/* harmony export */ });\n/* harmony import */ var _controllers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../controllers */ \"./src/contexts/users/infra/controllers/index.ts\");\n/* harmony import */ var _middlewares_ensureAuthenticated__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @middlewares/ensureAuthenticated */ \"./src/contexts/shared/middlewares/ensureAuthenticated.ts\");\n/* harmony import */ var _utils_handleResponse__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @utils/handleResponse */ \"./src/contexts/shared/core/utils/handleResponse/index.ts\");\n\n\n\nconst listUserController = new _controllers__WEBPACK_IMPORTED_MODULE_0__.ListUserController();\nconst handle = async (event) => {\n    const validate = await (0,_middlewares_ensureAuthenticated__WEBPACK_IMPORTED_MODULE_1__[\"default\"])({ headers: event.headers });\n    if (!validate.isAuthenticated) {\n        return (0,_utils_handleResponse__WEBPACK_IMPORTED_MODULE_2__.badRequest)({ body: validate.message });\n    }\n    const result = await listUserController.handle(event);\n    return result;\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvY29udGV4dHMvdXNlcnMvaW5mcmEvaGFuZGxlcnMvbGlzdFVzZXJIYW5kbGVyLnRzLmpzIiwibWFwcGluZ3MiOiI7Ozs7Ozs7QUFFQTtBQUNBO0FBQ0E7QUFFQTtBQUVBO0FBRUE7QUFFQTtBQUNBO0FBQ0E7QUFFQTtBQUVBO0FBQ0EiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9zZXJ2ZXJsZXNzLWFwaS8uL3NyYy9jb250ZXh0cy91c2Vycy9pbmZyYS9oYW5kbGVycy9saXN0VXNlckhhbmRsZXIudHM/ZjZjNSJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBIYW5kbGVyIH0gZnJvbSBcImF3cy1sYW1iZGFcIjtcblxuaW1wb3J0IHsgTGlzdFVzZXJDb250cm9sbGVyIH0gZnJvbSBcIi4uL2NvbnRyb2xsZXJzXCI7XG5pbXBvcnQgZW5zdXJlQXV0aGVudGljYXRlZCBmcm9tIFwiQG1pZGRsZXdhcmVzL2Vuc3VyZUF1dGhlbnRpY2F0ZWRcIjtcbmltcG9ydCB7IGJhZFJlcXVlc3QgfSBmcm9tIFwiQHV0aWxzL2hhbmRsZVJlc3BvbnNlXCI7XG5cbmNvbnN0IGxpc3RVc2VyQ29udHJvbGxlciA9IG5ldyBMaXN0VXNlckNvbnRyb2xsZXIoKTtcblxuZXhwb3J0IGNvbnN0IGhhbmRsZTogSGFuZGxlciA9IGFzeW5jIChldmVudCkgPT4ge1xuXG4gIGNvbnN0IHZhbGlkYXRlID0gYXdhaXQgZW5zdXJlQXV0aGVudGljYXRlZCh7aGVhZGVyczogZXZlbnQuaGVhZGVyc30pO1xuXG4gIGlmKCF2YWxpZGF0ZS5pc0F1dGhlbnRpY2F0ZWQpe1xuICAgcmV0dXJuIGJhZFJlcXVlc3Qoe2JvZHk6IHZhbGlkYXRlLm1lc3NhZ2V9KTtcbiAgfVxuXG4gIGNvbnN0IHJlc3VsdCA9IGF3YWl0IGxpc3RVc2VyQ29udHJvbGxlci5oYW5kbGUoZXZlbnQpO1xuXG4gIHJldHVybiByZXN1bHQ7XG59OyJdLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./src/contexts/users/infra/handlers/listUserHandler.ts\n");
 
 /***/ }),
 
@@ -177,6 +197,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((module) => {
 
 module.exports = require("@prisma/client");
+
+/***/ }),
+
+/***/ "axios":
+/*!************************!*\
+  !*** external "axios" ***!
+  \************************/
+/***/ ((module) => {
+
+module.exports = require("axios");
 
 /***/ })
 
@@ -252,7 +282,7 @@ module.exports = require("@prisma/client");
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval-source-map devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/contexts/users/infra/handlers/createUserHandle.ts");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/contexts/users/infra/handlers/listUserHandler.ts");
 /******/ 	var __webpack_export_target__ = exports;
 /******/ 	for(var i in __webpack_exports__) __webpack_export_target__[i] = __webpack_exports__[i];
 /******/ 	if(__webpack_exports__.__esModule) Object.defineProperty(__webpack_export_target__, "__esModule", { value: true });

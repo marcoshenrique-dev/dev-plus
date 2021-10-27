@@ -15,16 +15,23 @@ provider:
 
 functions:
   createUser:
-    handler: src/contexts/users/infra/handlers/createUserHandle.handle
+    handler: src/contexts/users/infra/handlers/createUserHandler.handle
     events:
       - http:
           path: /users
           method: POST
           cors: true
   listUser:
-    handler: src/contexts/users/infra/handlers/listUserHandle.handle
+    handler: src/contexts/users/infra/handlers/listUserHandler.handle
     events:
       - http:
           path: /users
           method: GET
+          cors: true
+  createProfile:
+    handler: src/contexts/profiles/infra/handlers/createProfileHandler.handle
+    events:
+      - http:
+          path: /profiles
+          method: POST
           cors: true
