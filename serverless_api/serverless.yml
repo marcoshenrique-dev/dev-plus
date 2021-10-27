@@ -42,3 +42,10 @@ functions:
           path: /profiles/all
           method: GET
           cors: true
+  findProfile:
+    handler: src/contexts/profiles/infra/handlers/findProfileHandler.handle
+    events:
+      - http:
+          path: /profiles
+          method: GET
+          cors: true
