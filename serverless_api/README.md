@@ -1,8 +1,8 @@
 # Serverless Api
 
 ### Rotas usando serverless:
-- criar conta (com github) → serverless
-- find user by email → serverless
+- criar conta (com github) → serverless ✅
+- find user by email → serverless ✅
 
 ---
 
